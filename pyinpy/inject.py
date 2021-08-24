@@ -16,6 +16,6 @@ class Injector:
         inject_dir=Path(inject_dir)
         inject_dir.mkdir(parents=True, exist_ok=True)
         shutil.copy(self.code,inject_dir)
-        inject_code=inject_code%(inject_dir,inject_dir/code)
+        inject_code=inject_code%(inject_dir,inject_dir/self.code)
         print(inject_code)
         inject_py(int(self.pid),inject_code)
