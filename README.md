@@ -11,7 +11,7 @@ However, the file name is limited, so the length of the injected python code is 
 git clone https://github.com/leegohi/pyinpy
 cd pyinpy && python setup.py install
 ```
-Both source distributions and `manylinux1` wheels are upoloaded to pypi for every release.
+
 
 ### Usage
 #### CLI
