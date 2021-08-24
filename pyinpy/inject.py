@@ -11,7 +11,7 @@ class Injector:
     def __check_env(self):
         pass
     def do_inject(self):
-        inject_code="""import sys;sys.path.insert(0,"%s");exec("open('%s').read()");"""
+        inject_code="""import sys;sys.path.insert(0,"%s");code=open('%s').read();exec(code);"""
         inject_dir="/tmp/pyinpy"
         inject_dir=Path(inject_dir)
         inject_dir.mkdir(parents=True, exist_ok=True)
