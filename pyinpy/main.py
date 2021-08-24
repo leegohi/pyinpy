@@ -37,7 +37,10 @@ def parse_args(args: Optional[List[str]]) -> Namespace:
 def main(args: Optional[List[str]] = None) -> None:
     ptrace_check()
     parsed_args = parse_args(args)
-    injector=Injector(parsed_args.pid,parsed_args.python_code)
+    code=parsed_args.code
+    if type(code) is bytes:
+        code=code.decode("utf-8")
+    injector=Injector(parsed_args.pid,code)
     injector.do_inject()
 if __name__ == "__main__":
     main()
